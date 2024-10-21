@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\personeltakip",
+    "\\personeltakip\\personeltakip"
   ],
+  "SelectedNode": "\\personeltakip\\personeltakip\\Form1.cs",
   "PreviewInSolutionExplorer": false
 }

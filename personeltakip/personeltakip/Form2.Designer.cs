@@ -102,7 +102,7 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(28, 25);
+            this.tabControl1.Location = new System.Drawing.Point(29, 25);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(821, 542);
@@ -627,7 +627,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(1014, 211);
+            this.label11.Location = new System.Drawing.Point(965, 211);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(41, 13);
             this.label11.TabIndex = 2;

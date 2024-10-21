@@ -86,7 +86,60 @@ namespace personeltakip
 
 
             }
+            this.Text = "YÖNETİCİ İŞLEMLERİ";
+            label11.ForeColor = Color.DarkRed;
+            label11.Text=Form1.adi+" " + Form1.soyadi;
+            textBox1.MaxLength = 11;
+            textBox4.MaxLength = 8;
+            toolTip1.SetToolTip(this.textBox1, "TC Kimlik No 11 Karakter olmalı!");
+            radioButton1.Checked = true;
+            textBox2.CharacterCasing= CharacterCasing.Upper;
+            textBox3.CharacterCasing = CharacterCasing.Upper;
+            textBox5.MaxLength = 10;
+            textBox6.MaxLength = 10;
+            progressBar1.Maximum = 100;
+            progressBar1.Value = 0;
+            Kullanicilari_goster();
 
+            //Personel İşlemleri
+
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.Width=100;
+            pictureBox2.Height=100;
+            pictureBox2.BorderStyle=BorderStyle.Fixed3D;
+            maskedTextBox1.Mask = "00000000000";
+            maskedTextBox2.Mask = "LL????????????????????";
+            maskedTextBox3.Mask = "LL????????????????????";
+            maskedTextBox4.Mask = "0000";
+            maskedTextBox2.Text.ToUpper();
+            maskedTextBox3.Text.ToUpper();
+
+            comboBox1.Items.Add("İlköğretim");
+            comboBox1.Items.Add("Ortaöğretim");
+            comboBox1.Items.Add("Lise");
+            comboBox1.Items.Add("Üniversite");
+
+            comboBox2.Items.Add("Yönetici");
+            comboBox2.Items.Add("Memur");
+            comboBox2.Items.Add("Şoför");
+            comboBox2.Items.Add("İşçi");
+
+            comboBox3.Items.Add("Arge");
+            comboBox3.Items.Add("Bilgi İşlem");
+            comboBox3.Items.Add("Üretim");
+            comboBox3.Items.Add("Paketleme");
+            comboBox3.Items.Add("Nakliye");
+
+            DateTime zaman = DateTime.Now;
+            int yil= int.Parse(zaman.ToString("yyyy"));
+            int ay = int.Parse(zaman.ToString("MM"));
+            int gun = int.Parse(zaman.ToString("dd"));
+
+            dateTimePicker1.MinDate = new DateTime(1975, 1, 1);
+            dateTimePicker1.MaxDate = new DateTime (yil - 18, ay,gun);
+            dateTimePicker1.Format=DateTimePickerFormat.Short;
+
+            radioButton3.Checked = true;
         }
     }
     
