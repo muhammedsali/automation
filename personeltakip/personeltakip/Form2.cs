@@ -141,6 +141,98 @@ namespace personeltakip
 
             radioButton3.Checked = true;
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox1.Text.Length < 11)
+                errorProvider1.SetError(textBox1, "TC Kimlik No 11 karakter olmalı!");
+            else errorProvider1.Clear();
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+             if(((int)e.KeyChar>=48 && (int)e.KeyChar<=57) || (int)e.KeyChar==8 )
+                e.Handled = false;
+             else e.Handled = true; 
+        }
+
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) == true || char.IsControl(e.KeyChar) == true || char.IsSeparator(e.KeyChar) == true)
+                e.Handled = false;
+            else e.Handled = true;
+        }
+
+
+
+        private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) == true || char.IsControl(e.KeyChar) == true || char.IsSeparator(e.KeyChar) == true)
+                e.Handled = false;
+            else e.Handled = true;
+
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox4.Text.Length != 8)
+
+                errorProvider1.SetError(textBox4, "Kullanıcı adı 8 karakter olmalı");
+            else errorProvider1.Clear();
+                        
+        }
+
+        private void textBox4_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) == true || char.IsControl(e.KeyChar) == true || char.IsDigit(e.KeyChar) == true)
+                e.Handled = false;
+            else e.Handled = true;
+        }
+        int parola_skoru = 0;
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+            string parola_seviyesi = "";
+            int kucuk_harf_skoru = 0, buyuk_harf_skoru = 0, rakam_skoru = 0, sembol_skoru = 0;
+            string sifre = textBox5.Text;
+            //Regex kütüphanesi ingilizce karakterleri baz aldığından, Türkçe karakterli ingilizce karakterlerine dönüştürmeliyiz.
+            string duzeltilmis_sifre = "";
+            duzeltilmis_sifre= sifre;
+            duzeltilmis_sifre = duzeltilmis_sifre.Replace('İ', 'I');
+            duzeltilmis_sifre = duzeltilmis_sifre.Replace('ı', 'i');
+            duzeltilmis_sifre = duzeltilmis_sifre.Replace('Ç', 'C');
+            duzeltilmis_sifre = duzeltilmis_sifre.Replace('ç', 'c');
+            duzeltilmis_sifre = duzeltilmis_sifre.Replace('Ş', 'S');
+            duzeltilmis_sifre = duzeltilmis_sifre.Replace('ş', 's');
+            duzeltilmis_sifre = duzeltilmis_sifre.Replace('Ğ', 'G');
+            duzeltilmis_sifre = duzeltilmis_sifre.Replace('ğ', 'g');
+            duzeltilmis_sifre = duzeltilmis_sifre.Replace('Ü', 'U');
+            duzeltilmis_sifre = duzeltilmis_sifre.Replace('ü', 'u');
+            duzeltilmis_sifre = duzeltilmis_sifre.Replace('Ö', 'O');
+            duzeltilmis_sifre = duzeltilmis_sifre.Replace('ö', 'o');
+
+            if (sifre != duzeltilmis_sifre)
+            {
+                sifre = duzeltilmis_sifre;
+                    textBox5.Text = sifre;
+                MessageBox.Show("Parolanızdaki Türkçe karakterler İngilizce karakterlere dönüştürülmüştür.");
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        }
     }
     
 }

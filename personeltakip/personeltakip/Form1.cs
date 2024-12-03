@@ -22,7 +22,11 @@ namespace personeltakip
         
         public static string tcno, adi, soyadi, yetki;
 
-        int hak = 3; bool durum = false;
+        int hak = 3;
+
+       
+
+        bool durum = false;
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -57,8 +61,7 @@ namespace personeltakip
                             yetki=kayitokuma.GetValue(3).ToString();
                             this.Hide();
                             Form2 frm2 = new Form2();
-                            frm2.Show();
-                            
+                            frm2.Show();                         
                             break;
                         }
                     }
